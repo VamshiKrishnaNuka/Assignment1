@@ -12,7 +12,7 @@ namespace Assignment1
             var height = 0.0;
             var weight = 0.0;
             var bmi = 0.0;
-            var adult = false;
+            var healthy = false;
             var EXIT_CHAR = 'q';
             decimal BMI = 0.0m;
             var name = "";
@@ -47,10 +47,25 @@ namespace Assignment1
             BMI= (decimal)(bmi);
             Console.WriteLine($"{name} your calculated BMI is {BMI}");
 
+            switch(bmi)
+                {
+                case var expression when bmi<18.5:
+                    Console.WriteLine("Thin");
+                    break;
+                    
+                case var expression when (bmi>=18.5 && bmi<25):
+                    Console.WriteLine("Healthy");
+                    break;
+               
+                case var expression when (bmi>=25 && bmi<29.9):
+                    Console.WriteLine("Over Weight");
+                    break;
 
-            Console.ReadLine();
+                case var expression when bmi>30:
+                    Console.WriteLine("Obese");
+                    break;
 
-
+                }
 
         }
     }
