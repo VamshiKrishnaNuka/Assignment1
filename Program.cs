@@ -16,6 +16,7 @@ namespace Assignment1
             decimal BMI = 0.0m;
             var name = "";
 
+            Console.WriteLine("Welcome to BMI Calculator");
             Console.WriteLine("Please enter your name ");
             name = Console.ReadLine();
 
@@ -24,7 +25,7 @@ namespace Assignment1
             
             if (age >= 18)
             {
-                Console.WriteLine($"Welcome {name} to BMI Calculator");
+                Console.WriteLine($"{name} please provide the following details for BMI Calculation.");
                 Console.WriteLine("Please enter your weight in Kgs");
                 weight = Int32.Parse(Console.ReadLine());
                 Console.WriteLine("Please enter your height");
@@ -34,6 +35,10 @@ namespace Assignment1
             {
                 dif = 18 - age;
                 Console.WriteLine($"{name} please try again after {dif} years ");
+            }
+            while (weight==0.0 || height==0)
+            {
+                Console.WriteLine("Please try again");
             }
 
             Console.ReadLine();
