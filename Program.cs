@@ -9,8 +9,9 @@ namespace Assignment1
 
             var age = 0;
             var dif = 0;
-            var height = 0;
+            var height = 0.0;
             var weight = 0.0;
+            var bmi = 0.0;
             var adult = false;
             var EXIT_CHAR = 'q';
             decimal BMI = 0.0m;
@@ -27,9 +28,10 @@ namespace Assignment1
             {
                 Console.WriteLine($"{name} please provide the following details for BMI Calculation.");
                 Console.WriteLine("Please enter your weight in Kgs");
-                weight = Int32.Parse(Console.ReadLine());
-                Console.WriteLine("Please enter your height");
-                height = Int32.Parse(Console.ReadLine());
+                weight = Double.Parse(Console.ReadLine());
+                Console.WriteLine("Please enter your height in Meters");
+                height = Double.Parse(Console.ReadLine());
+                
             }
             else
             {
@@ -40,6 +42,11 @@ namespace Assignment1
             {
                 Console.WriteLine("Please try again");
             }
+
+            bmi = weight / (height * height);
+            BMI= (decimal)(bmi);
+            Console.WriteLine($"{name} your calculated BMI is {BMI}");
+
 
             Console.ReadLine();
 
